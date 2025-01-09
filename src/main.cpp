@@ -18,13 +18,11 @@ int main(){
     InitAudioDevice();
     Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
     Texture2D livesImage = LoadTexture("Graphics/lives.png");
-
     SetTargetFPS(60);
     Game game;
     game.Draw();
     while(WindowShouldClose() == false)
     {   
-        cout<<game.spaceship.getpositionx()<<endl;
         game.HandleInput();
         game.Update();
         BeginDrawing();
@@ -54,7 +52,6 @@ int main(){
         DrawTextEx(font, "HIGH-SCORE", {570, 15}, 34, 2, ORANGE);
         string highscoreText = FormatWithLeadingZeros(game.getHighscore(), 5);
         DrawTextEx(font, highscoreText.c_str(), {655, 40}, 34, 2, ORANGE);
-
         game.Draw(); 
         EndDrawing();
     }

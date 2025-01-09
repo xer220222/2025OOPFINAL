@@ -23,7 +23,6 @@ class Game
         int getHighscore();
         void changescore(int livesleft);
         int getmyteryshiplives();
-        Spaceship spaceship;
         int getalienlives();
     private:
         void InitGame();
@@ -36,7 +35,7 @@ class Game
         void savehighscore(int highscore);
         void GameOver();
         void Reset();
-        //Spaceship spaceship;
+        Spaceship spaceship;
         void DeleteInactiveLasers();
         void CheckCollisions();
         vector<Obstacle> obstacles;

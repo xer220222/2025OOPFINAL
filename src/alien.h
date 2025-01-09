@@ -10,7 +10,7 @@ protected:
 public:
     Alien(int type, Vector2 position);
     virtual ~Alien();
-    virtual void Draw();            // 繪製外星人
+    virtual void Draw()=0;            // 繪製外星人
     virtual Rectangle getRect();    // 獲取邊框矩形
     virtual int GetType()=0;
     static std::vector<Texture2D> alienImages; // 靜態圖片資源

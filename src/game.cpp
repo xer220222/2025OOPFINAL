@@ -2,15 +2,12 @@
 
 Game::Game()
 {   
-    music = LoadMusicStream("Sounds/music.ogg");
     explosionSound = LoadSound("Sounds/explosion.ogg");
-    PlayMusicStream(music);
     InitGame();
 }
 Game::~Game()
 {
     Alien::UnloadImages();
-    UnloadMusicStream(music);
     UnloadSound(explosionSound);
 }
 
@@ -311,6 +308,7 @@ void Game::CheckCollisions()
         }
 
         if(CheckCollisionRecs(alien->getRect(), spaceship.getRect())) {
+            lives=0;
             GameOver();
         }
     }
